@@ -11,7 +11,7 @@ print("Training Polynomial Regression Model for Blood Sugar...")
 
 # Load and prepare data
 df = pd.read_csv('blood_sugar_prediction_dataset.csv')
-X = df[['Diet_Score', 'Exercise_Duration']]
+X = df[['Diet_Score']]  # Using only Diet_Score as input
 y = df['Blood_Sugar_Level']
 
 # Create polynomial features

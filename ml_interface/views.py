@@ -140,8 +140,7 @@ def polynomial(request):
     
     if request.method == 'POST':
         diet_score = float(request.POST.get('diet_score'))
-        exercise_duration = float(request.POST.get('exercise_duration'))
-        X_poly = models['polynomial']['poly_features'].transform([[diet_score, exercise_duration]])
+        X_poly = models['polynomial']['poly_features'].transform([[diet_score]])
         prediction = models['polynomial']['model'].predict(X_poly)[0]
         result = {'prediction': round(prediction, 2)}
     
